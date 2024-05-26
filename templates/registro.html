@@ -1,0 +1,67 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css.css') }}">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="titulo"><h1>< Registro /></h1></div>
+    <div class="contenedor-principal">
+        <form class="formulario-inicio" method="post">
+            <input class="formulario" type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+            <div class="formulario-contrasena">
+                <input class="formulario" type="password" name="passw" id="passw" placeholder="Contraseña" required>
+                <button id="btn2" class="btn-primary" type="button" onclick="mostrarContrasena__()">Ver contraseña</button>
+                <script>
+                    function mostrarContrasena__(){
+                        btnO = document.getElementById("btn2")
+                        var tipo = document.getElementById("passw");
+                        if(tipo.type == "password"){
+                            tipo.type = "text";
+                            btnO.textContent = 'Ocultar'
+                        }else{
+                            tipo.type = "password";
+                            btnO.textContent = 'Ver contraseña'
+                        }
+                    }
+                  </script>
+            </div>
+            <div class="formulario-contrasena">
+                <input class="formulario" type="password" name="conf_pass" id="conf_pass" placeholder="Confirmar contraseña" required>
+                <button id="btn3" class="btn-primary" type="button" onclick="mostrarContrasena_()">Ver contraseña</button>
+                <script>
+                    function mostrarContrasena_(){
+                        btnO = document.getElementById("btn3")
+                        var tipo = document.getElementById("conf_pass");
+                        if(tipo.type == "password"){
+                            tipo.type = "text";
+                            btnO.textContent = 'Ocultar'
+                        }else{
+                            tipo.type = "password";
+                            btnO.textContent = 'Ver contraseña'
+                        }
+                    }
+                  </script>
+            </div>
+            <div class="separador">
+                <input class="boton" type="submit" value="Registrarme">
+                <a class="cuenta" href="{{ url_for('index') }}">Ya tengo usuario</a>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: rgb(45, 45, 45);
+    padding: 4rem 10rem;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.titulo h1 {
+    font-weight: 600;
+    color: rgb(200, 200, 200);
+}
+
+.contenedor-principal {
+    margin: 2rem 6rem;
+    padding: 0 3rem;
+    /* background-color: red; */
+}
+
+.formulario-inicio {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formulario {
+    border-radius: 5px;
+    color: rgb(200, 200, 200);
+    font-weight: 300;
+    width: 100%;
+    background-color: rgb(45, 45, 45);
+    padding: 0.5rem;
+    border: 2px solid rgb(210, 210, 210);
+}
+
+.formulario-inicio .boton {
+    border-radius: 2px;
+    width: 45%;
+    border: none;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    background-color: rgb(45, 45, 45);
+    border: 2px solid rgb(210, 210, 210);
+    color: rgb(200, 200, 200);
+}
+
+.formulario-inicio .boton:hover {
+    cursor: pointer;
+    background-color: rgb(210, 210, 210);
+    color: rgb(45, 45, 45);
+}
+
+.formulario-inicio .separador {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario-inicio .registrarme {
+    font-size: 0.9rem;
+    color: rgb(210, 210, 210);
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.formulario-inicio .registrarme:hover {
+    cursor: pointer;
+    color: rgb(10, 10, 10);
+    text-decoration: underline;
+}
+
+.formulario-inicio .cuenta {
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    color: rgb(210, 210, 210);
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.formulario-inicio .cuenta:hover {
+    cursor: pointer;
+    color: rgb(10, 10, 10);
+    text-decoration: underline;
+}
+
+.formulario-contrasena {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.formulario-contrasena .formulario {
+    width: 80%;
+}
+
+.formulario-contrasena .btn-primary {
+    border: none;
+    width: 30%;
+    padding: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 400;
+    background-color: rgb(210, 210, 210);
+    border: 2px solid rgb(210, 210, 210);
+    color: rgb(45, 45, 45);
+}
+
+.formulario-contrasena .btn-primary:hover {
+    cursor: pointer;
+    background-color: rgb(45, 45, 45);
+    color: rgb(210, 210, 210);
+}

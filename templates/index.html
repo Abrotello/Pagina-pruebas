@@ -1,0 +1,50 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css.css') }}">
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="titulo"><h1>< Inicio de sesión /></h1></div>
+    <div class="contenedor-principal">
+        <form class="formulario-inicio" method="post">
+            <input class="formulario" type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+            <div class="formulario-contrasena">
+                <input class="formulario" type="password" name="pass" id="pass" placeholder="Contraseña" required>
+                <button id="btn" class="btn-primary" type="button" onclick="mostrarContrasena()">Ver contraseña</button>
+                <script>
+                    function mostrarContrasena(){
+                        btnO = document.getElementById("btn")
+                        var tipo = document.getElementById("pass");
+                        if(tipo.type == "password"){
+                            tipo.type = "text";
+                            btnO.textContent = 'Ocultar'
+                        }else{
+                            tipo.type = "password";
+                            btnO.textContent = 'Ver contraseña'
+                        }
+                    }
+                  </script>
+            </div>
+            <div class="separador">
+                <input class="boton" type="submit" value="Ingresar">
+                <a class="registrarme" href="{{ url_for('registro') }}">Registrarme</a>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
